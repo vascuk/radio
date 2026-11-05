@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="uk" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Налаштування — Радіо</title>
+    <link rel="stylesheet" href="css/settings.css" />
+    <link rel="stylesheet" href="css/header.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Радіо</h1>
+      <nav>
+        <a href="index.html">Головна</a>
+        <a href="templates.html">Шаблони</a>
+        <a href="settings.html" class="active">Налаштування</a>
+        <a href="terms.html">Умови</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="card">
+        <h2 class="card-title">Гучність</h2>
+
+        <div class="field">
+          <div class="field-head">
+            <label for="vol-radio">Радіо</label>
+            <span class="value" id="vol-radio-val">10%</span>
+          </div>
+          <input
+            type="range"
+            id="vol-radio"
+            min="0"
+            max="100"
+            step="1"
+            value="10"
+          />
+        </div>
+
+        <div class="field">
+          <div class="field-head">
+            <label for="vol-hymn">Хвилина мовчання</label>
+            <span class="value" id="vol-hymn-val">10%</span>
+          </div>
+          <input
+            type="range"
+            id="vol-hymn"
+            min="0"
+            max="100"
+            step="1"
+            value="10"
+          />
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 12px">
+        <h2 class="card-title">Джерело радіо</h2>
+        <input
+          type="url"
+          id="radio-url"
+          class="input"
+          placeholder="http://.../stream.mp3"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <p class="hint">Пряме посилання на mp3 / aac стрім.</p>
+      </div>
+
+      <div class="card" style="margin-top: 12px">
+        <h2 class="card-title">Головна сторінка читатиме</h2>
+        <table class="preview-table">
+          <thead>
+            <tr>
+              <th>Параметр</th>
+              <th>Значення</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>audioSrc</code></td>
+              <td id="pv-src">—</td>
+            </tr>
+            <tr>
+              <td><code>radioVolume</code></td>
+              <td id="pv-radio">—</td>
+            </tr>
+            <tr>
+              <td><code>hymnVolume</code></td>
+              <td id="pv-hymn">—</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="hint" style="margin-top: 10px">
+          Гучність — у форматі 0–1 для <code>&lt;audio&gt;.volume</code>.
+        </p>
+      </div>
+
+      <div class="actions">
+        <button id="btn-save" class="btn btn-primary">Зберегти</button>
+        <span id="save-status" class="status"></span>
+      </div>
+      <footer class="footer">
+        © 2026 Ващук Роман Юрійович. Усі права захищені.
+      </footer>
+    </main>
+
+    <script src="js/settings.js"></script>
+  </body>
+</html>

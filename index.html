@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Головна — Радіо</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>Радіо</h1>
+    <nav>
+      <a href="index.html" class="active">Головна</a>
+      <a href="templates.html">Шаблони</a>
+      <a href="settings.html">Налаштування</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <div class="card clock-card">
+      <div class="clock-display">
+        <div class="clock-time" id="clock-time">00:00:00</div>
+        <div class="clock-day" id="clock-day">—</div>
+      </div>
+
+      <div class="status-grid">
+        <div class="status-item">
+          <div class="status-label">Увімкнення</div>
+          <div class="status-value" id="radio-on">—</div>
+          <div class="status-sub" id="radio-on-sub"></div>
+        </div>
+        <div class="status-item">
+          <div class="status-label">Вимкнення</div>
+          <div class="status-value" id="radio-off">—</div>
+          <div class="status-sub" id="radio-off-sub"></div>
+        </div>
+        <div class="status-item">
+          <div class="status-label">Хвилина мовчання</div>
+          <div class="status-value" id="silence-value">9:00</div>
+          <div class="status-sub" id="silence-sub"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card player-card">
+      <div class="player-head">
+        <div class="player-status">
+          <span class="status-dot" id="status-dot"></span>
+          <span id="status-text">Очікування</span>
+        </div>
+        <button id="btn-emergency" class="btn btn-emergency">⏸ Аварійне вимкнення</button>
+      </div>
+      <audio id="radio-audio" preload="none"></audio>
+      <audio id="hymn-audio" preload="auto" src="hymn.mp3"></audio>
+    </div>
+
+    <h2 class="section-title">Дні тижня</h2>
+    <div class="days-list" id="days-list"></div>
+    <footer class="footer">
+      © 2026 Ващук Роман Юрійович. Усі права захищені.
+    </footer>
+  </main>
+
+  <div class="unlock-overlay" id="unlock-overlay">
+    <div class="unlock-box">
+      <div class="unlock-icon">🔊</div>
+      <h2>Натисніть, щоб увімкнути звук</h2>
+      <p>Браузер блокує автозапуск аудіо без дії користувача.<br>Один клік — і далі все працює автоматично.</p>
+      <button id="btn-unlock" class="btn btn-primary">Увімкнути звук</button>
+    </div>
+  </div>
+
+  <script src="js/settings.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

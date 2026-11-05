@@ -1,0 +1,193 @@
+/* ============================================================
+   templates.css — усі стилі сторінки «Шаблони»
+   ============================================================ */
+
+/* ---------- Змінні ---------- */
+:root,
+:root[data-theme="dark"] {
+  --bg-primary:    #0A0A0A;
+  --bg-secondary-1:#0D0D0D;
+  --bg-secondary-2:#121212;
+  --bg-elevated:   #1A1A1A;
+
+  --border-1:      #1F1F1F;
+  --border-2:      #2B2B2B;
+  --border-focus:  #F97316;
+
+  --text-primary:  #FAFAFA;
+  --text-secondary:#A1A1A1;
+  --text-muted:    #6B6B6B;
+  --text-on-accent:#0A0A0A;
+
+  --accent:        #F97316;
+  --accent-hover:  #FB923C;
+  --accent-active: #EA580C;
+  --accent-subtle: rgba(249, 115, 22, 0.12);
+
+  --error: #EF4444;
+
+  --radius-sm: 6px;
+  --radius:    10px;
+  --radius-lg: 14px;
+}
+
+/* ---------- Reset / body ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+input, button { font: inherit; }
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 20px 48px;
+}
+
+/* ---------- Card ---------- */
+.card {
+  background: var(--bg-secondary-1);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 13px; font-weight: 500;
+  cursor: pointer; background: transparent; color: var(--text-primary);
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-subtle);
+  border-color: var(--border-focus);
+}
+.btn-primary { background: var(--accent); color: var(--text-on-accent); }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-primary:active { background: var(--accent-active); }
+
+.btn-secondary {
+  background: var(--bg-secondary-2);
+  border-color: var(--border-2);
+  color: var(--text-primary);
+}
+.btn-secondary:hover { background: var(--bg-elevated); }
+
+.btn-ghost { background: transparent; color: var(--text-secondary); }
+.btn-ghost:hover { background: var(--bg-secondary-2); color: var(--text-primary); }
+
+.btn-danger {
+  background: transparent;
+  color: var(--error);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+.btn-danger:hover { background: rgba(239, 68, 68, 0.08); }
+
+.btn-icon {
+  width: 26px; height: 26px; padding: 0;
+  background: transparent; color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0; font-size: 12px; line-height: 1;
+}
+.btn-icon:hover { background: var(--bg-secondary-2); color: var(--error); }
+
+/* ---------- Поле назви шаблону ---------- */
+.edit-name {
+  display: block; width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 15px; font-weight: 600;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.edit-name::placeholder { color: var(--text-muted); font-weight: 500; }
+.edit-name:hover:not([readonly]) { border-color: var(--border-2); }
+.edit-name:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--accent-subtle);
+}
+.edit-name[readonly] { cursor: default; }
+.edit-name[readonly]:focus {
+  border-color: var(--border-1);
+  box-shadow: none;
+}
+
+/* ---------- Рядки перерв ---------- */
+.breaks-editor {
+  display: flex; flex-direction: column; gap: 6px;
+}
+
+.break-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 6px 5px 8px;
+  background: var(--bg-secondary-2);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-sm);
+  min-height: 34px;
+}
+.break-row input[type="text"] {
+  padding: 5px 8px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 13px;
+  width: 78px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.break-row input[type="text"]::placeholder {
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+.break-row input[type="text"]:hover:not([readonly]) {
+  border-color: var(--border-2);
+}
+.break-row input[type="text"]:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--accent-subtle);
+}
+.break-row input[type="text"][readonly] {
+  cursor: default;
+}
+.break-row input[type="text"][readonly]:focus {
+  border-color: var(--border-1);
+  box-shadow: none;
+}
+.break-row .sep { color: var(--text-muted); font-size: 13px; }
+.break-row .btn-remove-row { margin-left: auto; }
+
+/* ---------- Actions ---------- */
+.actions {
+  display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;
+}
+
+/* ---------- Список шаблонів ---------- */
+.list {
+  display: flex; flex-direction: column;
+  gap: 10px; margin-top: 16px;
+}

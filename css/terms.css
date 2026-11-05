@@ -1,0 +1,138 @@
+/* ============================================================
+   terms.css — стилі сторінки «Умови використання»
+   ============================================================ */
+
+:root,
+:root[data-theme="dark"] {
+  --bg-primary:    #0A0A0A;
+  --bg-secondary-1:#0D0D0D;
+  --bg-secondary-2:#121212;
+  --bg-elevated:   #1A1A1A;
+
+  --border-1:      #1F1F1F;
+  --border-2:      #2B2B2B;
+  --border-focus:  #F97316;
+
+  --text-primary:  #FAFAFA;
+  --text-secondary:#A1A1A1;
+  --text-muted:    #6B6B6B;
+  --text-on-accent:#0A0A0A;
+
+  --accent:        #F97316;
+  --accent-hover:  #FB923C;
+  --accent-subtle: rgba(249, 115, 22, 0.12);
+
+  --radius-sm: 6px;
+  --radius:    10px;
+  --radius-lg: 14px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 20px 64px;
+}
+
+.card {
+  background: var(--bg-secondary-1);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+}
+
+/* ---------- Head ---------- */
+.terms-head {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-1);
+  margin-bottom: 20px;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.page-sub {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ---------- Body ---------- */
+.terms-body {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+.terms-body h2 {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 26px 0 10px;
+  letter-spacing: 0.01em;
+}
+.terms-body h2:first-child { margin-top: 0; }
+
+.terms-body p {
+  margin: 0 0 8px;
+  color: var(--text-primary);
+}
+
+.terms-body strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.terms-body ul {
+  margin: 6px 0 10px;
+  padding-left: 22px;
+  list-style: disc;
+}
+
+.terms-body ul li {
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.terms-body ul li::marker {
+  color: var(--text-muted);
+}
+
+/* ---------- Foot ---------- */
+.terms-foot {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-1);
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .container { padding: 16px 14px 40px; }
+  .card { padding: 18px 16px; }
+  .page-title { font-size: 19px; }
+  .terms-body { font-size: 13px; }
+  .terms-body h2 { font-size: 14px; margin-top: 22px; }
+}

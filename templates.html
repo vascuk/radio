@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Шаблони розкладу — Радіо</title>
+  <link rel="stylesheet" href="css/templates.css">
+  <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>Радіо</h1>
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="templates.html" class="active">Шаблони</a>
+      <a href="settings.html">Налаштування</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- Форма створення — завжди видима -->
+    <div class="card" id="create-form">
+      <input type="text" id="new-name" class="edit-name" placeholder="Назва шаблону" autocomplete="off">
+      <div id="new-breaks" class="breaks-editor"></div>
+      <div class="actions">
+        <button id="btn-create" class="btn btn-primary">Зберегти</button>
+        <button id="btn-reset" class="btn btn-ghost">Очистити</button>
+      </div>
+    </div>
+
+    <!-- Список шаблонів -->
+    <div id="list" class="list"></div>
+    <footer class="footer">
+      © 2026 Ващук Роман Юрійович. Усі права захищені.
+    </footer>
+  </main>
+
+  <script src="js/templates.js"></script>
+</body>
+</html>
